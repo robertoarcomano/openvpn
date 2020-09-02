@@ -3,5 +3,6 @@ OpenVPN Configuration
 
 ## Execute script.sh
 ```
-wget https://raw.githubusercontent.com/robertoarcomano/openvpn/master/script.sh -O - | bash
+git clone https://github.com/robertoarcomano/openvpn.git && cd openvpn && ./script.sh
 ```
+
