@@ -45,28 +45,12 @@ if {$force_conservative} {
 set timeout -1
 spawn ./easyrsa build-ca
 match_max 100000
-expect -exact "\r
-Note: using Easy-RSA configuration from: ./vars\r
-\r
-Using SSL: openssl OpenSSL 1.1.1f  31 Mar 2020\r
-\r
-Enter New CA Key Passphrase: "
+expect -exact "Enter New CA Key Passphrase: "
 send -- "password\r"
 expect -exact "\r
 Re-Enter New CA Key Passphrase: "
 send -- "password\r"
-expect -exact "\r
-Generating RSA private key, 2048 bit long modulus (2 primes)\r
-..........................+++++\r
-.......................................+++++\r
-e is 65537 (0x010001)\r
-You are about to be asked to enter information that will be incorporated\r
-into your certificate request.\r
-What you are about to enter is what is called a Distinguished Name or a DN.\r
-There are quite a few fields but you can leave some blank\r
-For some fields there will be a default value,\r
-If you enter '.', the field will be left blank.\r
------\r
+expect -exact "
 Common Name (eg: your user, host, or server name) \[Easy-RSA CA\]:"
 send -- "\r"
 expect eof
