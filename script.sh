@@ -4,9 +4,9 @@
 echo 0. Remove older directories
 rm -rf certificate_authority server openvpn
 
-# 1. Install easyrsa
-echo 1. Install easyrsa
-sudo apt-get -y install easy-rsa
+# 1. Install easyrsa, expect
+echo 1. Install easyrsa, expect
+sudo apt-get -y install easy-rsa expect
 
 # 2. Create and enter CA directory
 echo 2. Create and enter CA directory
@@ -29,7 +29,7 @@ echo 4. Generate PKI
 
 # 5. Generate CA-key and Certificate
 echo 5. Generate CA-key and Certificate
-./easyrsa build-ca
+./build-ca.exp
 
 # 6. Step 2,3,4 for server directory
 echo 6. Step 2,3,4 for server directory
