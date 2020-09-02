@@ -67,5 +67,5 @@ mv ../sign-req.exp . && ./sign-req.exp
 
 # 12. Copy CA and server certificates
 echo 12. Copy CA and server certificates
-# mv pki/{ca.crt,issued/server.crt} ../openvpn
+mv pki/{ca.crt,issued/server.crt} ../openvpn
 
