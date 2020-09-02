@@ -61,8 +61,10 @@ echo 10. Import req
 cd ../certificate_authority && ./easyrsa import-req ../server/pki/reqs/server.req server
 
 # 11. Sign req
+echo 11. Sign req
 ./easyrsa sign-req server server
 
 # 12. Copy CA and server certificates
+echo 12. Copy CA and server certificates
 mv pki/{ca.crt,issued/server.crt} ../openvpn
 
