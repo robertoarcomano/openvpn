@@ -69,3 +69,15 @@ mv ../sign-req.exp . && ./sign-req.exp
 echo 12. Copy CA and server certificates
 mv pki/{ca.crt,issued/server.crt} ../openvpn
 
+# 13. Deffie-Hellman, create and copy
+echo 13. Deffie-Hellman, create and copy
+./easyrsa gen-dh
+mv pki/dh.pem ../openvpn
+
+# 14. Generate ta.key
+echo 14. Generate ta.key
+cd ../openvpn && openvpn --genkey --secret ta.key || exit
+
+
+
+
