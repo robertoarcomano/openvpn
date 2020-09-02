@@ -62,9 +62,9 @@ cd ../certificate_authority && ./easyrsa import-req ../server/pki/reqs/server.re
 
 # 11. Sign req
 echo 11. Sign req
-./easyrsa sign-req server server
+# ./easyrsa sign-req server server
 
 # 12. Copy CA and server certificates
 echo 12. Copy CA and server certificates
-mv pki/{ca.crt,issued/server.crt} ../openvpn
+# mv pki/{ca.crt,issued/server.crt} ../openvpn
 
