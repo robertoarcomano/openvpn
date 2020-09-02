@@ -63,6 +63,7 @@ cd ../certificate_authority && ./easyrsa import-req ../server/pki/reqs/server.re
 # 11. Sign req
 echo 11. Sign req
 # ./easyrsa sign-req server server
+mv ../sign-req.exp . && ./sign-req.exp
 
 # 12. Copy CA and server certificates
 echo 12. Copy CA and server certificates
