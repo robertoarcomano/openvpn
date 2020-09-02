@@ -29,7 +29,7 @@ echo 4. Generate PKI
 
 # 5. Generate CA-key and Certificate
 echo 5. Generate CA-key and Certificate
-./build-ca.exp
+mv ../build-ca.exp . && ./build-ca.exp
 
 # 6. Step 2,3,4 for server directory
 echo 6. Step 2,3,4 for server directory
