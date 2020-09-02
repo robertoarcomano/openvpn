@@ -47,6 +47,7 @@ EOF
 # 7. Create server certificate
 echo 7. Create server certificate
 ./easyrsa gen-req server nopass
+mv ../gen-req.exp . && ./gen-req.exp
 
 # 8. Prepare output directory
 echo 8. Prepare output directory
