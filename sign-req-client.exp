@@ -56,7 +56,7 @@ Please check over the details shown below for accuracy. Note that this request\r
 has not been cryptographically verified. Please be sure it came from a trusted\r
 source or that you have verified the request checksum with the sender.\r
 \r
-Request subject, to be signed as a server certificate for 1080 days:\r
+Request subject, to be signed as a client certificate for 1080 days:\r
 \r
 subject=\r
     commonName                = client\r
