@@ -62,7 +62,6 @@ cd ../certificate_authority && ./easyrsa import-req ../server/pki/reqs/server.re
 
 # 11. Sign req
 echo 11. Sign req
-# ./easyrsa sign-req-server server server
 mv ../sign-req-server.exp . && ./sign-req-server.exp
 
 # 12. Copy CA and server certificates
@@ -99,3 +98,6 @@ mv ../gen-req-client.exp . && ./gen-req-client.exp
 echo 10. Import client req
 cd ../certificate_authority && ./easyrsa import-req ../client/pki/reqs/client.req client
 
+# 18. Sign client req
+echo 18. Sign client req
+mv ../sign-req-client.exp . && ./sign-req-client.exp
