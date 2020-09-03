@@ -103,4 +103,4 @@ echo 18. Sign client req
 mv ../sign-req-client.exp . && ./sign-req-client.exp
 
 # 19. Copy client.crt
-cp pki/{issued/client.crt} ../openvpn
+cp pki/issued/client.crt ../openvpn
