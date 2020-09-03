@@ -101,3 +101,6 @@ cd ../certificate_authority && ./easyrsa import-req ../client/pki/reqs/client.re
 # 18. Sign client req
 echo 18. Sign client req
 mv ../sign-req-client.exp . && ./sign-req-client.exp
+
+# 19. Copy client.crt
+cp pki/{issued/client.crt} ../openvpn
