@@ -66,12 +66,12 @@ mv ../sign-req-server.exp . && ./sign-req-server.exp
 
 # 12. Copy CA and server certificates
 echo 12. Copy CA and server certificates
-mv pki/{ca.crt,issued/server.crt} ../openvpn
+cp pki/{ca.crt,issued/server.crt} ../openvpn
 
 # 13. Deffie-Hellman, create and copy
 echo 13. Deffie-Hellman, create and copy
-./easyrsa gen-dh
-mv pki/dh.pem ../openvpn
+# ./easyrsa gen-dh
+# mv pki/dh.pem ../openvpn
 
 # 14. Generate ta.key
 echo 14. Generate ta.key
@@ -95,7 +95,7 @@ echo 16. Create client certificate
 mv ../gen-req-client.exp . && ./gen-req-client.exp
 
 # 17. Import client req
-echo 10. Import client req
+echo 17. Import client req
 cd ../certificate_authority && ./easyrsa import-req ../client/pki/reqs/client.req client
 
 # 18. Sign client req
