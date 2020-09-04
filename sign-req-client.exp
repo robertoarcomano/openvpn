@@ -41,10 +41,9 @@ if {$force_conservative} {
 #
 # -Don
 
-set CLIENT_NAME [lindex $argv 0]
 
 set timeout -1
-spawn ./easyrsa sign-req client $CLIENT_NAME
+spawn ./easyrsa sign-req client client
 match_max 100000
 expect -exact "\r
 Note: using Easy-RSA configuration from: ./vars\r
@@ -60,7 +59,7 @@ source or that you have verified the request checksum with the sender.\r
 Request subject, to be signed as a client certificate for 1080 days:\r
 \r
 subject=\r
-    commonName                = $CLIENT_NAME\r
+    commonName                = client\r
 \r
 \r
 Type the word 'yes' to continue, or any other input to abort.\r
