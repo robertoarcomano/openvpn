@@ -6,8 +6,8 @@ if [ -z "$1" ]; then
 fi
 
 DIR=`dirname $0`
-DIR_CLIENT=$DIR/openvpn/$CLIENT_NAME
 CLIENT_NAME=$1
+DIR_CLIENT=$DIR/openvpn/$CLIENT_NAME
 CONF=$DIR/client.conf
 CA=$(cat $DIR/ca.crt)
 CERT=$(cat $DIR_CLIENT/$CLIENT_NAME.crt)
