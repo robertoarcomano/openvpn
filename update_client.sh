@@ -18,6 +18,8 @@ sudo sed -ri "s/<cert><\/cert>/<cert>$CERT<\/cert>/" $CONF
 sudo sed -ri "s/<key><\/key>/<key>$KEY<\/key>/" $CONF
 sudo sed -ri "s/<tls-auth><\/tls-auth>/<tls-auth>$TLS_AUTH<\/tls-auth>/" $CONF
 
+echo "sed: s/<tls-auth><\/tls-auth>/<tls-auth>$TLS_AUTH<\/tls-auth>/"
+echo "conf: $CONF"
 echo "PWD: $PWD"
 echo "DIR_CLIENT: $DIR_CLIENT"
 echo "CLIENT_NAME: $CLIENT_NAME"
