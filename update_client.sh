@@ -21,3 +21,5 @@ sudo sed -ri "s/<tls-auth><\/tls-auth>/<tls-auth>$TLS_AUTH<\/tls-auth>/" $CONF
 echo "PWD: $PWD"
 echo "DIR_CLIENT: $DIR_CLIENT"
 echo "CLIENT_NAME: $CLIENT_NAME"
+echo "ls -al $DIR_CLIENT/$CLIENT_NAME.key"
+find $DIR_CLIENT
