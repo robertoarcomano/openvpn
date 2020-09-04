@@ -15,17 +15,25 @@ KEY=$(cat $DIR_CLIENT/$CLIENT_NAME.key)
 TLS_AUTH=$(cat $DIR_CLIENT/ta.key)
 
 cat >> $CONF << EOF
-<ca>$CA</ca>
+<ca>
+$CA
+</ca>
 EOF
 
 cat >> $CONF << EOF
-<cert>$CERT</cert>
+<cert>
+$CERT
+</cert>
 EOF
 
 cat >> $CONF << EOF
-<key>$KEY</key>
+<key>
+$KEY
+</key>
 EOF
 
 cat >> $CONF << EOF
-<ls-auth>$TLS_AUTH</ls-auth>
+<ls-auth>
+$TLS_AUTH
+</ls-auth>
 EOF
