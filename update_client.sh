@@ -5,7 +5,7 @@ if [ -z "$1" ]; then
   exit
 fi
 
-IR=`dirname $0`
+DIR=`dirname $0`
 CLIENT_NAME=$1
 CONF=$DIR/client.conf
 
