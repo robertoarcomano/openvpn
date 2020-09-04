@@ -47,6 +47,6 @@ set timeout -1
 spawn ./easyrsa gen-req client nopass
 match_max 100000
 expect -exact "
-Common Name (eg: your user, host, or server name) \[$CLIENT_NAME\]:"
+Common Name (eg: your user, host, or server name) \[client\]:"
 send -- "$CLIENT_NAME\r"
 expect eof
