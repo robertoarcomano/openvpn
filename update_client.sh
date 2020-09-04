@@ -33,7 +33,7 @@ $KEY
 EOF
 
 cat >> $CONF << EOF
-<ls-auth>
+<tls-auth>
 $TLS_AUTH
-</ls-auth>
+</tls-auth>
 EOF
