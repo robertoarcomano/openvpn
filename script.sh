@@ -107,6 +107,6 @@ echo 18. Sign client req
 mv ../sign-req-client.exp . && ./sign-req-client.exp $CLIENT_NAME
 
 # 19. Copy client.crt and client.key
-mv pki/issued/client.crt ../openvpn/$CLIENT_NAME
-mv ../client/pki/private/client.key ../openvpn/$CLIENT_NAME
+mv pki/issued/client.crt ../openvpn/$CLIENT_NAME.crt
+mv ../client/pki/private/client.key ../openvpn/$CLIENT_NAME.key
 
