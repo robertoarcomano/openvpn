@@ -92,14 +92,14 @@ set_var EASYRSA_REQ_OU          "bertolinux"
 EOF
 ./easyrsa init-pki
 
-mv ../gen-req-client.exp .
-mv ../sign-req-client.exp .
+#mv ../gen-req-client.exp .
+#mv ../sign-req-client.exp .
 
 CLIENTS="oracle1 oracle2 oracle3 oracle4"
 for CLIENT_NAME in $CLIENTS; do
   # 16. Create client certificate
   echo 16. Create client certificate
-  ./gen-req-client.exp $CLIENT_NAME
+  ../gen-req-client.exp $CLIENT_NAME
 
   # 17. Import client req
   echo 17. Import client req
@@ -107,7 +107,7 @@ for CLIENT_NAME in $CLIENTS; do
 
   # 18. Sign client req
   echo 18. Sign client req
-  ./sign-req-client.exp $CLIENT_NAME
+  ../sign-req-client.exp $CLIENT_NAME
 
   # 19. Copy client.crt and client.key
   mv pki/issued/client.crt ../openvpn/$CLIENT_NAME.crt
