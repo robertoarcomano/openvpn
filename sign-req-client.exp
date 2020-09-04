@@ -41,6 +41,7 @@ if {$force_conservative} {
 #
 # -Don
 
+set CLIENT_NAME [lindex $argv 0]
 
 set timeout -1
 spawn ./easyrsa sign-req client client
@@ -59,7 +60,7 @@ source or that you have verified the request checksum with the sender.\r
 Request subject, to be signed as a client certificate for 1080 days:\r
 \r
 subject=\r
-    commonName                = client\r
+    commonName                = $CLIENT_NAME\r
 \r
 \r
 Type the word 'yes' to continue, or any other input to abort.\r
