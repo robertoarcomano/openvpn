@@ -119,6 +119,6 @@ EOF
   rm -f ../client/pki/reqs/client.req
   rm -f pki/private/client.key
   rm -f pki/reqs/client.req
+  echo "pwd: $PWD"
   ../update_client.sh $CLIENT_NAME
 done
-
