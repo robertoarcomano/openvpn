@@ -113,4 +113,5 @@ for CLIENT_NAME in $CLIENTS; do
   mv pki/issued/client.crt ../openvpn/$CLIENT_NAME.crt
   mv ../client/pki/private/client.key ../openvpn/$CLIENT_NAME.key
   rm -f ../client/pki/reqs/client.req
+  rm -f pki/private/client.key
 done
