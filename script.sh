@@ -106,5 +106,5 @@ mv ../sign-req-client.exp . && ./sign-req-client.exp
 
 # 19. Copy client.crt and client.key
 mv pki/issued/client.crt ../openvpn
-mv pki/private/client.key ../openvpn
+mv ../client/pki/private/client.key ../openvpn
 
