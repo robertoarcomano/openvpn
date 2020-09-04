@@ -1,8 +1,15 @@
 #!/bin/bash
 
+if [ -z "$1" ]; then
+  echo "Syntax: <NAME>"
+  exit
+fi
+
+CLIENT_NAME=$1
+
 CA=$(cat ca.crt)
-CERT=$(cat client.crt)
-KEY=$(cat client.key)
+CERT=$(cat $CLIENT_NAME.crt)
+KEY=$(cat $CLIENT_NAME.key)
 TLS_AUTH=$(cat ta.key)
 sudo sed -ri "s/<ca><\/ca>/<ca>$CA<\/ca>/" client.conf
 sudo sed -ri "s/<cert><\/cert>/<cert>$CERT<\/cert>/" client.conf

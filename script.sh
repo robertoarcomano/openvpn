@@ -112,11 +112,13 @@ EOF
 
   # 19. Copy client.crt and client.key
   mkdir -p ../openvpn/$CLIENT_NAME
+  cp ../client.conf ../openvpn/$CLIENT_NAME
   cp ../openvpn/{ca.crt,dh.pem,ta.key} ../openvpn/$CLIENT_NAME
   mv pki/issued/client.crt ../openvpn/$CLIENT_NAME/$CLIENT_NAME.crt
   mv ../client/pki/private/client.key ../openvpn/$CLIENT_NAME/$CLIENT_NAME.key
   rm -f ../client/pki/reqs/client.req
   rm -f pki/private/client.key
   rm -f pki/reqs/client.req
+  ../update_client.sh $CLIENT_NAME
 done
 
