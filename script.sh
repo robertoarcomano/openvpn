@@ -79,10 +79,16 @@ cp ../../dh.pem ../openvpn
 echo 14. Generate ta.key
 cd ../openvpn && openvpn --genkey --secret ta.key || exit
 
-# 15. Client key and certificate request
-echo 15. Client key and certificate request
-cd .. && make-cadir client && cd client || exit
-cat >> vars << EOF
+#mv ../gen-req-client.exp .
+#mv ../sign-req-client.exp .
+
+CLIENTS="oracle1 oracle2 oracle3 oracle4"
+for CLIENT_NAME in $CLIENTS; do
+
+  # 15. Client key and certificate request
+  echo 15. Client key and certificate request
+  cd .. && rm -rf client && make-cadir client && cd client || exitq
+  cat >> vars << EOF
 set_var EASYRSA_REQ_COUNTRY     "IT"
 set_var EASYRSA_REQ_PROVINCE    "Piemonte"
 set_var EASYRSA_REQ_CITY        "Torino"
@@ -90,13 +96,8 @@ set_var EASYRSA_REQ_ORG "Roberto Arcomano"
 set_var EASYRSA_REQ_EMAIL       "bertolinux@gmail.com"
 set_var EASYRSA_REQ_OU          "bertolinux"
 EOF
-./easyrsa init-pki
+  ./easyrsa init-pki
 
-#mv ../gen-req-client.exp .
-#mv ../sign-req-client.exp .
-
-CLIENTS="oracle1 oracle2 oracle3 oracle4"
-for CLIENT_NAME in $CLIENTS; do
   # 16. Create client certificate
   echo 16. Create client certificate
   ../gen-req-client.exp $CLIENT_NAME
