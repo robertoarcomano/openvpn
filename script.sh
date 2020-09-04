@@ -82,7 +82,7 @@ cd ../openvpn && openvpn --genkey --secret ta.key || exit
 #mv ../gen-req-client.exp .
 #mv ../sign-req-client.exp .
 
-CLIENTS="oracle1 oracle2 oracle3 oracle4"
+CLIENTS="oracle1 oracle2 oracle3 oracle4 toshiba google clevo"
 for CLIENT_NAME in $CLIENTS; do
 
   # 15. Client key and certificate request
@@ -111,9 +111,12 @@ EOF
   ../sign-req-client.exp $CLIENT_NAME
 
   # 19. Copy client.crt and client.key
-  mv pki/issued/client.crt ../openvpn/$CLIENT_NAME.crt
-  mv ../client/pki/private/client.key ../openvpn/$CLIENT_NAME.key
+  mkdir -p ../openvpn/$CLIENT_NAME
+  cp ../openvpn/{ca.crt,dh.pem,ta.key} ../openvpn/$CLIENT_NAME
+  mv pki/issued/client.crt ../openvpn/$CLIENT_NAME/$CLIENT_NAME.crt
+  mv ../client/pki/private/client.key ../openvpn/$CLIENT_NAME/$CLIENT_NAME.key
   rm -f ../client/pki/reqs/client.req
   rm -f pki/private/client.key
   rm -f pki/reqs/client.req
 done
+
