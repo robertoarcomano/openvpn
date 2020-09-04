@@ -82,7 +82,7 @@ cd ../openvpn && openvpn --genkey --secret ta.key || exit
 #mv ../gen-req-client.exp .
 #mv ../sign-req-client.exp .
 
-CLIENTS="oracle1 oracle2 oracle3 oracle4 toshiba google clevo"
+CLIENTS="clevo google oracle2 oracle3 oracle4 toshiba"
 for CLIENT_NAME in $CLIENTS; do
 
   # 15. Client key and certificate request
