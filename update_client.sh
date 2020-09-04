@@ -8,7 +8,9 @@ fi
 DIR=`dirname $0`
 CLIENT_NAME=$1
 CONF=$DIR/client.conf
-
+CONF=client.conf
+#echo "DIR: $DIR"
+#exit
 CA=$(cat ca.crt)
 CERT=$(cat $CLIENT_NAME.crt)
 KEY=$(cat $CLIENT_NAME.key)
