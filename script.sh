@@ -72,6 +72,8 @@ cp pki/{ca.crt,issued/server.crt} ../openvpn
 echo 13. Deffie-Hellman, create and copy
 # ./easyrsa gen-dh
 # mv pki/dh.pem ../openvpn
+# Debugging purpose
+cp ../../dh.pem ../openvpn
 
 # 14. Generate ta.key
 echo 14. Generate ta.key
@@ -102,5 +104,7 @@ cd ../certificate_authority && ./easyrsa import-req ../client/pki/reqs/client.re
 echo 18. Sign client req
 mv ../sign-req-client.exp . && ./sign-req-client.exp
 
-# 19. Copy client.crt
-cp pki/issued/client.crt ../openvpn
+# 19. Copy client.crt and client.key
+mv pki/issued/client.crt ../openvpn
+mv pki/private/client.key ../openvpn
+
