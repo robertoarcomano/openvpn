@@ -87,7 +87,7 @@ for CLIENT_NAME in $CLIENTS; do
 
   # 15. Client key and certificate request
   echo 15. Client key and certificate request
-  cd .. && rm -rf client && make-cadir client && cd client || exitq
+  cd .. && rm -rf client && make-cadir client && cd client || exit
   cat >> vars << EOF
 set_var EASYRSA_REQ_COUNTRY     "IT"
 set_var EASYRSA_REQ_PROVINCE    "Piemonte"
@@ -115,4 +115,5 @@ EOF
   mv ../client/pki/private/client.key ../openvpn/$CLIENT_NAME.key
   rm -f ../client/pki/reqs/client.req
   rm -f pki/private/client.key
+  rm -f pki/reqs/client.req
 done
