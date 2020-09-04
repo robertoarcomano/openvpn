@@ -1,5 +1,6 @@
 #!/bin/bash
 
+cd openvpn
 CLIENTS="new"
 for CLIENT_NAME in $CLIENTS; do
 
